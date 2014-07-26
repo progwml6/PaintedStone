@@ -11,14 +11,9 @@ public class TabPaintedStone extends CreativeTabs
         super(label);
     }
 
-    public ItemStack getIconItemStack ()
-    {
-        return new ItemStack(PaintedStone.coloredStone, 1, 13);
-    }
-
-    @Override
     public Item getTabIconItem ()
     {
-        return new ItemStack(PaintedStone.coloredCobble).getItem();
+        return new ItemStack(PaintedStone.coloredStone, 1, 13).getItem();
     }
+
 }

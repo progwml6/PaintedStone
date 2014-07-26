@@ -20,46 +20,37 @@ public class PaintedStoneBlock extends Block
     public final String textureName;
     public final String localName;
     public IIcon[] icons;
-    Block dropBlock;
 
     public PaintedStoneBlock(Material material, float hardness, String texture, String name)
     {
         super(material);
-        //TODO setHardness()
         this.setHardness(hardness);
         this.textureName = texture;
         this.localName = name;
-        //TODO setCreativeTab()
         this.setCreativeTab(PaintedStone.tab);
-        this.dropBlock = this;
     }
 
-    public PaintedStoneBlock(Material material, float hardness, String texture, String name, Block dropBlock)
+    public PaintedStoneBlock(Material material, float hardness, String texture, String name, Block dropID)
     {
         this(material, hardness, texture, name);
-        this.dropBlock = dropBlock;
     }
 
-    //TODO getUnlocalizedName()
     @Override
     public String getUnlocalizedName ()
     {
         return "tile." + localName;
     }
 
-    //TODO damageDropped
     @Override
     public int damageDropped (int meta)
     {
         return meta;
     }
-
     public Block blockDropped (int par1, Random par2Random, int par3)
     {
-        return dropBlock;
+        return this;
     }
 
-    //TODO registerIcons
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons (IIconRegister iconRegister)
@@ -72,7 +63,6 @@ public class PaintedStoneBlock extends Block
         }
     }
 
-    //TODO getIcon
     @Override
     @SideOnly(Side.CLIENT)
     public IIcon getIcon (int side, int meta)
@@ -80,13 +70,12 @@ public class PaintedStoneBlock extends Block
         return meta < icons.length ? icons[meta] : icons[0];
     }
 
-    //TODO getSubBlocks
     @Override
-    public void getSubBlocks (Item b, CreativeTabs tab, List list)
+    public void getSubBlocks (Item id, CreativeTabs tab, List list)
     {
         for (int iter = 0; iter < icons.length; iter++)
         {
-            list.add(new ItemStack(b, 1, iter));
+            list.add(new ItemStack(id, 1, iter));
         }
     }
 }

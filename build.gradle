@@ -20,7 +20,7 @@ buildscript {
 
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.1-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
 
@@ -67,6 +67,8 @@ if (configFile2.exists()){
 
 dependencies {
     compile "mantle:Mantle:${config.minecraft_version}-${config.mantle_version}:deobf"
+	compile "tconstruct:TConstruct:${config.minecraft_version}-${config.tconstruct_version}:deobf"
+
 }
 
 // Finds and sets version data

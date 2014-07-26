@@ -4,10 +4,10 @@
   "name": "Painted Stone",
   "description": "Smear a bit of dye on rocks to give them color!",
   "version": "Arrow",
-  "mcversion": "1.6.X",
+  "mcversion": "1.7.10",
   "url": "insert.url.here",
   "updateUrl": "",
-  "authors": [
+  "authorsList": [
     "mDiyo"
   ],
   "logoFile": "",
