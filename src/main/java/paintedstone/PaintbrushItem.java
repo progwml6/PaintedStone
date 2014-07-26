@@ -99,7 +99,7 @@ public class PaintbrushItem extends Item
         float f8 = f3 * f5;
         double d3 = 5.0D; //Max range
         Vec3 vec31 = vec3.addVector((double) f7 * d3, (double) f6 * d3, (double) f8 * d3);
-        return world.rayTraceBlocks_do_do(vec3, vec31, par3, !par3);
+        return world.func_147447_a(vec3, vec31, par3, !par3, false);
     }
 
     void resetItem (ItemStack stack)
